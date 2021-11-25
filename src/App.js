@@ -1,7 +1,14 @@
 import logo from './logo.svg';
 import './App.css';
+import {getCharecters, dismissGetAllCharecters} from '../src/store/actions/charecters'
+import { useDispatch } from 'react-redux';
+import { useEffect } from 'react';
 
 function App() {
+  const dispatchApi = useDispatch() 
+  useEffect(() => {
+    dispatchApi(getCharecters())
+  },[])
   return (
     <div className="App">
       <header className="App-header">
